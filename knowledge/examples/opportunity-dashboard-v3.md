@@ -1,3 +1,24 @@
+---
+id: KNOW-003
+title: Opportunity dashboard index.html — iteration v3 (current golden output)
+type: knowledge
+status: CURRENT
+version: 3.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: [KNOW-002]
+depends_on: [ADR-0002, BRAIN-001]
+implements: []
+traces_to: [KNOW-005, T-002]
+tags: [example, dashboard, konkred, golden-output]
+confidence: high
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `Html56v3.md`. Content below is unmodified; only frontmatter was added. This is the current golden output targeted by task T-002.
+
+---
+
 Below is the **final self-contained `index.html`**.  
 It uses the 56-row Rubika/Baleh opportunity dataset from `pasted-text.txt` lines 3–56 and KONKRED brand direction from `KONKRED.XYZ DEVELOPMENT.md`.
 

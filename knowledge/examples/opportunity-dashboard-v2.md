@@ -1,3 +1,24 @@
+---
+id: KNOW-002
+title: Opportunity dashboard index.html — iteration v2
+type: knowledge
+status: SUPERSEDED
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: [KNOW-001]
+depends_on: [ADR-0002]
+implements: []
+traces_to: [KNOW-003, KNOW-004]
+tags: [example, dashboard, superseded]
+confidence: medium
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `Html56v2.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 حتماً. این یک فایل `index.html` کامل، مستقل، بدون وابستگی خارجی، responsive، RTL، production-ready و شامل این قابلیت‌هاست:
 
 - Intro/Hero متحرک

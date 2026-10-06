@@ -1,3 +1,24 @@
+---
+id: KNOW-001
+title: Opportunity dashboard index.html — iteration v1
+type: knowledge
+status: SUPERSEDED
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: [ADR-0002]
+implements: []
+traces_to: [KNOW-003]
+tags: [example, dashboard, superseded]
+confidence: medium
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `Html56v1.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 عالی — حالا همه ردیف‌ها را داریم و می‌توانم فایل نهایی را بدهم.
 
 چون شما گفتی فقط «فایل HTML کامل و production-ready» می‌خواهی، مستقیم خود فایل را می‌دهم.  

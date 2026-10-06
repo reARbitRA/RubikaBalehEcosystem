@@ -1,3 +1,24 @@
+---
+id: BRAIN-003
+title: Rubika & Baleh top opportunities — variant of the BRAIN-002 thesis
+type: brainstorm
+status: SEED
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: []
+implements: []
+traces_to: [BRAIN-002]
+tags: [opportunity, persian, duplicate-candidate]
+confidence: low
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `روبیکابله۱.md`. Content below is unmodified. Overlaps BRAIN-002 — see task T-003 for the dedupe decision.
+
+---
+
 ## فرض‌های کلیدی
 
 - فرض کرده‌ام روبیکا و بله برای رفتارهای رایج تجارت در پیام‌رسان استفاده می‌شوند: کانال، گروه، دایرکت، فروش غیررسمی، مدیریت ادمین و پشتیبانی مشتری.

@@ -1,3 +1,24 @@
+---
+id: KNOW-004
+title: Audit of the opportunity dashboard — iteration v2
+type: knowledge
+status: CURRENT
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: [KNOW-002]
+implements: []
+traces_to: [ADR-0002]
+tags: [research, audit, dashboard]
+confidence: high
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `AuditReportHtml56v2.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 باشه — بهترین مسیر برای رسیدن به خروجی **95/100** اینه که از اینجا به بعد داشبورد را نه به‌عنوان یک “table viewer”، بلکه به‌عنوان یک **KONKRED-grade market intelligence product** برای **Iran / Rubika / Baleh** طراحی کنیم.
 
 ## تصمیم درست

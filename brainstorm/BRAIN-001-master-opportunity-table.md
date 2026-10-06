@@ -1,3 +1,24 @@
+---
+id: BRAIN-001
+title: Master Opportunity Table — Rubika & Baleh
+type: brainstorm
+status: SEED
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: []
+implements: []
+traces_to: [VISION-001]
+tags: [opportunity, inventory, english, canonical]
+confidence: high
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `Untitled.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 حتماً.  
 در ادامه یک **Master Opportunity Inventory** یکپارچه، بلند و جامع برای اکوسیستم‌های **روبیکا و بله** می‌دهم که هم ایده‌های قبلی را حفظ می‌کند، هم ایده‌های مبهم را شفاف‌تر بازنویسی می‌کند، و هم فقط به سایدهاسل محدود نمی‌شود.
 

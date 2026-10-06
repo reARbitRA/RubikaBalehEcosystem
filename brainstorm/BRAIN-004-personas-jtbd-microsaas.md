@@ -1,3 +1,24 @@
+---
+id: BRAIN-004
+title: Persona dissection, Jobs-To-Be-Done and Micro-SaaS opportunity analysis
+type: brainstorm
+status: SEED
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: []
+implements: []
+traces_to: [VISION-001]
+tags: [persona, jtbd, micro-saas, persian]
+confidence: medium
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `روبیکابله۲.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 ## بخش 1: فرض‌های کلیدی و ابهامات
 
 - **فرض پلتفرمی:** روبیکا و بله برای رفتارهای رایج پیام‌رسانی/کانال/گروه/دایرکت/فروش غیررسمی/پشتیبانی/جامعه‌سازی استفاده می‌شوند.

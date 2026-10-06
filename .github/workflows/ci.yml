@@ -1,0 +1,71 @@
+name: ci
+
+on:
+  push:
+    branches: [main, "feat/**", "spec/**", "chore/**", "adr/**", "arena/**"]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Job names below are the required status checks — see ops/DEPLOY.md §4.
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: make test
+
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: make lint
+
+  typecheck:
+    name: typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: make typecheck
+
+  secret-scan:
+    name: secret-scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: make secret-scan
+
+  forge-lint:
+    name: forge-lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: forge-lint (with ledger rule F8 against the PR base)
+        run: |
+          if [ -n "${{ github.event.pull_request.base.ref }}" ]; then
+            git fetch --no-tags origin "+refs/heads/${{ github.event.pull_request.base.ref }}:refs/remote/origin/${{ github.event.pull_request.base.ref }}"
+            make forge-lint FORGE_BASE_REF="origin/${{ github.event.pull_request.base.ref }}"
+          else
+            make forge-lint
+          fi
