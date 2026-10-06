@@ -15,7 +15,7 @@ tags: [forge, state]
 confidence: high
 ---
 
-# STATE — as of 2026-10-06T08:42:18Z · session `2026-10-06-01` · HEAD `791861b` (pre-session baseline)
+# STATE — as of 2026-10-06T09:05:00Z · session `2026-10-06-01` · HEAD `375edd5` (scaffold) · handoff commit is the last commit of the session
 
 ## Milestone: M0 (methodology adoption) — 95% by task count
 M0 is "the repo can bootstrap a brand-new agent with zero context". Scaffold is complete; what

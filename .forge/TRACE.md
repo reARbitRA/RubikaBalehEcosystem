@@ -23,7 +23,7 @@ confidence: high
 
 | Spec | Plan | Task | Branch | Commit | Test | Artefact / code | Status |
 |---|---|---|---|---|---|---|---|
-| — (methodology, no spec) | PLAN-001 | T-001 | `chore/forge-scaffold` | `S1`, `S2` | `tests/test_forge_integrity.py` | whole tree (`AGENTS.md`, `.forge/**`, `tools/forge_lint.py`) | DONE |
+| — (methodology, no spec) | PLAN-001 | T-001 | `chore/forge-scaffold` | `375edd5` | `tests/test_forge_integrity.py` | whole tree (`AGENTS.md`, `.forge/**`, `tools/forge_lint.py`) | DONE |
 | — (no spec exists yet) | PLAN-001 | T-002 | — | — | — | `knowledge/examples/opportunity-dashboard-v3.md` → `src/` | OPEN |
 | — (no spec exists yet) | PLAN-001 | T-003 | — | — | — | `brainstorm/BRAIN-001..005` → `specs/` | OPEN |
 | — (decision record) | — | T-004 | — | — | — | `decisions/ADR-0004` (MVP slice choice) | OPEN |
