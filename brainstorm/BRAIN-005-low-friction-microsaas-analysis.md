@@ -1,3 +1,24 @@
+---
+id: BRAIN-005
+title: Low-cost, low-friction Micro-SaaS opportunity analysis for Rubika and Baleh
+type: brainstorm
+status: SEED
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: []
+implements: []
+traces_to: [ADR-0003]
+tags: [micro-saas, risk, english]
+confidence: medium
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `روبیکابله۳.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 # تحلیل فرصت‌های Micro-SaaS کم‌هزینه و کم‌دردسر برای روبیکا و بله  
 **زاویه تحلیل:** سولو فاندر، بودجه نزدیک صفر، سایدهاسل، نگهداری کم، بدون اتکا به APIهای نامطمئن  
 **تاریخ:** 28 آوریل 2026

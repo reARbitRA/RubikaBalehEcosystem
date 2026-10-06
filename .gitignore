@@ -1,0 +1,57 @@
+# ---- key material: NEVER commit (quality/SECURITY-BASELINE.md §1) ----
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*_ed25519
+*_ed25519.pub
+.forge-keys/
+.env
+.env.*
+!.env.example
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# ---- node ----
+node_modules/
+npm-debug.log*
+.npm/
+
+# ---- build / output ----
+build/
+dist/
+out/
+.output/
+.svelte-kit/
+.next/
+.nuxt/
+.parcel-cache/
+.turbo/
+.vite/
+
+# ---- os / editor ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---- arena / agent scratch ----
+.arena/
+.cache/

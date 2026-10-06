@@ -1,3 +1,24 @@
+---
+id: BRAIN-002
+title: Rubika & Baleh opportunity analysis — assumptions, top opportunities, MVP scoping
+type: brainstorm
+status: SEED
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: []
+implements: []
+traces_to: [VISION-001]
+tags: [opportunity, persian, mvp]
+confidence: medium
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `روبیکابله.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 ## فرض‌های کلیدی
 
 - فرض کرده‌ام روبیکا و بله برای رفتارهای رایج تجارت در پیام‌رسان استفاده می‌شوند: کانال، گروه، دایرکت، فروش غیررسمی، مدیریت ادمین و پشتیبانی مشتری.

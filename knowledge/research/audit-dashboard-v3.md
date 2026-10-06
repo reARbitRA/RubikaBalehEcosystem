@@ -1,3 +1,24 @@
+---
+id: KNOW-005
+title: Audit of the opportunity dashboard — iteration v3
+type: knowledge
+status: CURRENT
+version: 1.0.0
+owner: human
+created: 2026-10-05
+updated: 2026-10-06
+supersedes: []
+depends_on: [KNOW-003]
+implements: []
+traces_to: [T-002]
+tags: [research, audit, dashboard]
+confidence: high
+---
+
+> **Provenance.** Migrated from the repository root on 2026-10-06 by session `2026-10-06-01` (task T-001). Original filename: `AuditReprtHtml56v3.md`. Content below is unmodified; only frontmatter was added.
+
+---
+
 صادقانه؟ **نه، این نسخه بیشتر حدود 88 تا 91 از 100 است، نه 95.**
 
 برای یک فایل مستقل و بدون وابستگی خارجی، خروجی **خیلی خوب و قابل ارائه** است؛ ولی اگر معیارمان واقعاً **95/100 production-grade** باشد، هنوز چند جا کم دارد.

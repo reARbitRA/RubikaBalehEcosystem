@@ -1,0 +1,14 @@
+# CODEOWNERS — every path needs a human owner. Agents draft; humans dispose.
+*                       @reARbitRA
+
+# Methodology machinery: human-owned, agents may only append (LEDGER) or overwrite (STATE).
+/AGENTS.md              @reARbitRA
+/.forge/                @reARbitRA
+/specs/                 @reARbitRA
+/decisions/             @reARbitRA
+/quality/               @reARbitRA
+/ops/KEYS.md            @reARbitRA
+
+# Product code and tests: agent-authored, human-reviewed.
+/src/                   @reARbitRA
+/tests/                 @reARbitRA
