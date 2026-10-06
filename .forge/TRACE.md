@@ -3,7 +3,7 @@ id: FORGE-004
 title: TRACE — Traceability Matrix
 type: forge
 status: ACTIVE
-version: 1.2.0
+version: 1.3.0
 owner: agent
 created: 2026-10-06
 updated: 2026-10-06
@@ -25,7 +25,7 @@ confidence: high
 |---|---|---|---|---|---|---|---|
 | — (methodology, no spec) | PLAN-001 | T-001 | `chore/forge-scaffold` | `375edd5` | `tests/test_forge_integrity.py` | whole tree (`AGENTS.md`, `.forge/**`, `tools/forge_lint.py`) | DONE — PR #1 |
 | SPEC-001 (REVIEW) | PLAN-001 | T-002 | `arena/8216d2ef-rubikabalehecosystem` | `37cd663` | planned `test_ac_1_*` … `test_ac_8_*` | `specs/SPEC-001-opportunity-dashboard.md`; `src/` remains empty | REVIEW — awaiting human `REVIEW → APPROVED` |
-| — (methodology, no spec) | PLAN-001 | T-007 | `arena/8216d2ef-rubikabalehecosystem` | pending task commit | `tests/test_persistence_check.py` | `tools/persistence_check.py` | DONE — verification pending commit |
+| — (methodology, no spec) | PLAN-001 | T-007 | `arena/8216d2ef-rubikabalehecosystem` | `820b50a` | `tests/test_persistence_check.py` | `tools/persistence_check.py` | DONE — local audit and regression tests pass |
 | — (no spec exists yet) | PLAN-001 | T-003 | — | — | — | `brainstorm/BRAIN-001..005` → `specs/` | OPEN |
 | — (decision record) | — | T-004 | — | — | — | `decisions/ADR-0004` (MVP slice choice) | OPEN |
 | — (infra) | — | T-005 | — | — | — | `ops/KEYS.md` (deploy key activation) | BLOCKED |

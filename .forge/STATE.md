@@ -3,56 +3,84 @@ id: STATE-001
 title: STATE — Current Snapshot
 type: state
 status: ACTIVE
-version: 1.0.0
+version: 1.1.0
 owner: agent
 created: 2026-10-06
 updated: 2026-10-06
 supersedes: []
 depends_on: []
 implements: []
-traces_to: []
+traces_to: [T-002, T-007]
 tags: [forge, state]
 confidence: high
 ---
 
-# STATE — as of 2026-10-06T09:20:00Z · session `2026-10-06-01` · HEAD `375edd5` + handoff `00b2441` · PR #1 open, awaiting human
+# STATE — as of 2026-10-06T18:09:58Z · session `2026-10-06-02` · task commits `37cd663`, `820b50a` · PR #2 open
 
-## Milestone: M0 (methodology adoption) — 95% by task count
-M0 is "the repo can bootstrap a brand-new agent with zero context". Scaffold is complete and pushed as
-**PR #1** (`chore/forge): scaffold SPEC-FORGE methodology`). What remains is human action:
-activate the write credential (T-005), move the CI workflow into place (T-006 step 0), and merge.
+## Milestone: M1 (opportunity dashboard) — 25% by task outcome
+
+M1 now has its first behavioural contract: `SPEC-001` is in **REVIEW**. The methodology baseline
+remains green and now includes the persistence receipt tool, but no product code is authorised or
+present under `src/` until a human flips `SPEC-001` from `REVIEW` to `APPROVED`.
+
+**PR:** https://github.com/reARbitRA/RubikaBalehEcosystem/pull/2
 
 ## Green baseline: YES
-`make bootstrap` exit 0 · `make test` exit 0 (12 tests, 0 failures) · `make lint` exit 0 (no-op, `src/` empty)
-· `make typecheck` exit 0 (no-op, `src/` empty) · `make forge-lint` exit 0 · `make secret-scan` exit 0
+
+`make check` exit 0 (15 tests, 0 failures) · `make lint` exit 0 (no-op, `src/` empty) ·
+`make typecheck` exit 0 (no-op, `src/` empty) · `make forge-lint` exit 0 (0 errors, 1 known T3
+workflow warning) · `make secret-scan` exit 0. The new
+`tools/persistence_check.py --repo-root . --audit-ledger --clean-tree` also exits 0 on a clean tree.
 
 ## In progress
-- **T-002** (retro-spec the opportunity dashboard) — not started — blocked by nothing, but requires a
-  human to APPROVE the spec before any code moves into `src/`.
 
-## Blocked (both need a human — an agent cannot do either)
-- **T-005** (activate deploy key) — needs a human to add the public key in
-  *Settings → Deploy keys → Allow write access*. Public key + fingerprint are in `ops/KEYS.md`.
-  HTTPS push via the authenticated `gh` session works in the meantime.
+- **T-002 / SPEC-001** — `REVIEW` — the dashboard contract is ready for a human `REVIEW → APPROVED`
+  decision. Its proposed scope is a Persian-first RTL, offline, single-file opportunity explorer with
+  56 embedded source rows, transparent score/filter behaviour, local CSV export, and a measurable
+  usability kill criterion. `src/` intentionally remains empty.
+
+## Blocked / human-owned
+
+- **T-002** — a human must review `specs/SPEC-001-opportunity-dashboard.md` and either request a new
+  DRAFT or change the status to `APPROVED`. No agent may implement before that transition.
+- **T-005** — deploy-key write activation remains a human GitHub Settings action.
+- **T-006** — CI workflow activation and branch protection remain human/owner GitHub Settings actions.
+
+## Deferred / skipped this session
+
+- **T-003** — intentionally not started (**STOP-6**): it is size `L` and must be split by product area
+  before an agent drafts the corresponding REVIEW specs.
+- **T-004** — intentionally not started: its dependency T-003 has not yet produced the promoted option
+  set required for `ADR-0004`.
+- **T-006** — not counted toward this session's work loop after the three priority slots; it is also
+  explicitly human-only.
 
 ## Next up (ordered)
-0. **Human:** review + merge PR #1, then do T-005 (deploy key) and T-006 (CI + branch protection).
-1. T-002 — promote `knowledge/examples/opportunity-dashboard-v3.md` into `src/` behind a spec
-2. T-003 — promote `brainstorm/BRAIN-001..005` into specs (human/ARCHITECT act)
-3. T-004 — decide the first real MVP slice (order-tracking CRM vs. dashboard) via ADR
-4. T-006 — set up GitHub branch protection + required status checks (human, see `ops/DEPLOY.md`)
+
+1. **Human:** review PR #2 and `SPEC-001`; approve it only if the Persian-first/RTL and local CSV
+   requirements are desired for M1.
+2. **Builder after approval:** implement T-002 test-first, promote the artefact into `src/index.html`,
+   and leave `SPEC-001` at `IMPLEMENTED` for human verification.
+3. **Architect:** split T-003 into S/M area tasks (orders, receipts, renewals, or another coherent
+   cluster) before drafting further specs; do not process T-003 as one L-sized task.
+4. **Architect after T-003:** draft `ADR-0004` for T-004, naming exactly one first semi-manual MVP
+   slice and its kill criterion.
+5. **Human:** complete T-005/T-006 in GitHub settings.
 
 ## Known debt / warnings
-- 10 legacy root documents were migrated into `brainstorm/` and `knowledge/` with synthesised
-  frontmatter. Their `status` is deliberately conservative (`SEED` / `CURRENT`); a human should
-  confirm each one. Original filenames are recorded in each file's *Provenance* section.
-- `روبیکابله.md` and `روبیکابله۱.md` overlap heavily (same "top 3 opportunities" thesis). A dedupe
-  pass is part of T-003.
-- Persian filenames were renamed to ASCII slugs for tooling safety; provenance preserved in-document.
+
+- `forge-lint` retains the expected **T3** warning because `.github/workflows/ci.yml` cannot be
+  created by the current GitHub App; `ops/ci-workflow.yml` is staged for human activation in T-006.
+- `knowledge/examples/bot-spec-golden-pattern.md`, named in the autonomous bootstrap prompt, is absent
+  from the intact baseline. No substitute was invented; `SPEC-001` uses the repository's
+  `.forge/templates/spec.md` structure instead.
+- `KNOW-003` still describes its legacy data source as `pasted-text.txt`; `SPEC-001` records
+  `BRAIN-001` as the canonical in-repository source of the 56 rows.
 
 ## Env/infra changes this session
-- Added `ops/ENV.md` (currently zero runtime env vars — the dashboard is a static file).
-- Added `ops/KEYS.md` with one ACTIVE-pending-activation ed25519 key fingerprint.
-- Added `ops/ci-workflow.yml` (the CI workflow, staged one `git mv` away from
-  `.github/workflows/ci.yml` — see ops/DEPLOY.md §3.1).
-- Added `.gitignore` covering key material (`*.pem`, `id_*`, `*_ed25519*`, `.forge-keys/`, `.env`).
+
+- Added `tools/persistence_check.py`: a standard-library checker for conservative ledger-claim
+  auditing, clean-tree checks, and local/remote persistence receipts.
+- Added `tests/test_persistence_check.py` with clean-audit, missing-claim, and remote-receipt
+  regression coverage.
+- No runtime environment variables, secrets, product code, or deploy configuration changed.

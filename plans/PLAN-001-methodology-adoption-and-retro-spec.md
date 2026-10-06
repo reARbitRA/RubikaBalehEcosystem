@@ -3,7 +3,7 @@ id: PLAN-001
 title: PLAN-001 — Methodology adoption and retro-spec of the legacy corpus
 type: plan
 status: ACTIVE
-version: 1.0.0
+version: 1.1.0
 owner: agent
 created: 2026-10-06
 updated: 2026-10-06
@@ -31,6 +31,8 @@ The plan is COMPLETE when all of the following are true:
 4. The first product artefact (`knowledge/examples/opportunity-dashboard-v3.md`) has an APPROVED spec
    and a home in `src/` — or an explicit human decision that it stays out of `src/`.
 5. Write credential is active and logged in `ops/KEYS.md`; branch protection + required checks are on.
+6. A fresh agent can run `tools/persistence_check.py --repo-root . --audit-ledger --clean-tree`, and a
+   finishing agent can obtain a remote-verified receipt without third-party dependencies.
 
 ## 3. Ordered tasks
 
@@ -42,6 +44,7 @@ The plan is COMPLETE when all of the following are true:
 | 4 | T-004 — decide the first real MVP slice | S | T-003 | — | output is an ADR, not code |
 | 5 | T-005 — activate the deploy key | XS | T-001 | — | human action; currently BLOCKED |
 | 6 | T-006 — branch protection + required status checks | XS | T-001 | — | human action in GitHub settings |
+| 7 | T-007 — restore persistence-check receipt tool | S | T-001 | — | DONE in session `2026-10-06-02`; methodology-only repair |
 
 ## 4. Risks / sequencing notes
 
