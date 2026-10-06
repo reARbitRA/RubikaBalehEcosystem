@@ -29,7 +29,7 @@ templates, CI gate, test suite, key protocol.
 `AGENTS.md`, `.forge/{STATE,LEDGER,GLOSSARY,CONVENTIONS,TRACE}.md`, `.forge/templates/*` (8),
 `vision/*`, `decisions/ADR-000{1,2,3}`, `plans/PLAN-001`, `tasks/**`, `specs/INDEX.md`,
 `quality/{DOD,TEST-STRATEGY,SECURITY-BASELINE}.md`, `ops/{ENV,DEPLOY,KEYS,RUNBOOK}.md`,
-`tools/forge_lint.py`, `tests/*`, `Makefile`, `.gitignore`, `.github/{workflows/,PULL_REQUEST_TEMPLATE.md,CODEOWNERS}` + `ops/ci-workflow.yml`.
+`tools/forge_lint.py`, `tests/*`, `Makefile`, `.gitignore`, `.github/{PULL_REQUEST_TEMPLATE.md,CODEOWNERS}` + `ops/ci-workflow.yml` (staged CI workflow).
 
 ## Steps
 1. Write `AGENTS.md` (constitution + bootstrap + rules).

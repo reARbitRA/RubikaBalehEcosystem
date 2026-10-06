@@ -73,8 +73,12 @@ the `workflows` permission and GitHub rejects any push that creates a file under
 git mv ops/ci-workflow.yml .github/workflows/ci.yml
 ```
 
-(or grant the App `workflows: write`, then an agent can do the same). Until that happens, run the
-identical gate locally with `make check` — CI is a convenience, the gate is not optional.
+(or grant the App `workflows: write`, then an agent can do the same). Note that GitHub rejects *any*
+new file under `.github/workflows/`, including a `.gitkeep`, so the directory itself does not exist in
+git yet — the `git mv` creates it.
+
+Until that happens, run the identical gate locally with `make check` — CI is a convenience, the gate is
+not optional. `forge-lint` reports the missing directory as warning `T3` so it cannot be forgotten.
 
 ## 4. Branch protection (required settings)
 
