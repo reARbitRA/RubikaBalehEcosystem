@@ -15,11 +15,12 @@ tags: [forge, state]
 confidence: high
 ---
 
-# STATE — as of 2026-10-06T09:05:00Z · session `2026-10-06-01` · HEAD `375edd5` (scaffold) · handoff commit is the last commit of the session
+# STATE — as of 2026-10-06T09:20:00Z · session `2026-10-06-01` · HEAD `375edd5` + handoff `00b2441` · PR #1 open, awaiting human
 
 ## Milestone: M0 (methodology adoption) — 95% by task count
-M0 is "the repo can bootstrap a brand-new agent with zero context". Scaffold is complete; what
-remains is human activation of the write credential (see `ops/KEYS.md`).
+M0 is "the repo can bootstrap a brand-new agent with zero context". Scaffold is complete and pushed as
+**PR #1** (`chore/forge): scaffold SPEC-FORGE methodology`). What remains is human action:
+activate the write credential (T-005), move the CI workflow into place (T-006 step 0), and merge.
 
 ## Green baseline: YES
 `make bootstrap` exit 0 · `make test` exit 0 (12 tests, 0 failures) · `make lint` exit 0 (no-op, `src/` empty)
@@ -29,12 +30,13 @@ remains is human activation of the write credential (see `ops/KEYS.md`).
 - **T-002** (retro-spec the opportunity dashboard) — not started — blocked by nothing, but requires a
   human to APPROVE the spec before any code moves into `src/`.
 
-## Blocked
+## Blocked (both need a human — an agent cannot do either)
 - **T-005** (activate deploy key) — needs a human to add the public key in
   *Settings → Deploy keys → Allow write access*. Public key + fingerprint are in `ops/KEYS.md`.
   HTTPS push via the authenticated `gh` session works in the meantime.
 
 ## Next up (ordered)
+0. **Human:** review + merge PR #1, then do T-005 (deploy key) and T-006 (CI + branch protection).
 1. T-002 — promote `knowledge/examples/opportunity-dashboard-v3.md` into `src/` behind a spec
 2. T-003 — promote `brainstorm/BRAIN-001..005` into specs (human/ARCHITECT act)
 3. T-004 — decide the first real MVP slice (order-tracking CRM vs. dashboard) via ADR

@@ -74,3 +74,31 @@ All commands exit 0.
 **Handoff note for next agent:** Do **not** start writing `src/` code. The next real step is
 T-002/T-003 (retro-spec the dashboard and the opportunity corpus), and both end at a human approval
 gate. T-005 is human-gated. If you are a BUILDER with no APPROVED spec, say so and stop.
+
+---
+
+## 2026-10-06T09:20:00Z · session `2026-10-06-01` (continued) · agent `arena-agent` · HEAD `375edd5` → `see git log`
+
+**Did:** opened **PR #1** — "chore(forge): scaffold SPEC-FORGE methodology" — against `main` from
+`arena/333acea6-rubikabalehecosystem`, with the PR template filled and the real output of
+`make bootstrap && make test && make lint && make typecheck && make forge-lint && make secret-scan`
+pasted into it. Then recorded the PR in `.forge/TRACE.md`, `.forge/STATE.md` and T-001.
+
+**Specs touched:** none exist yet.
+
+**Decisions proposed:** none new.
+
+**Learned:**
+- GitHub rejects **any** new file under `.github/workflows/` for this App token — including a
+  `.gitkeep`. The directory therefore does not exist in git; the workflow lives at
+  `ops/ci-workflow.yml` and `forge-lint` reports warning `T3` until a human moves it.
+- The App also cannot use the contents API for that path (403), so the file cannot be created by any
+  agent-side route. This is a permission boundary, not a bug — do not keep retrying it.
+
+**Verification:** unchanged from the entry above — `make check` exit 0 (12 tests, forge-lint 0 errors,
+secret-scan 0 findings).
+
+**Handoff note for next agent:** PR #1 is the deliverable. Do not re-scaffold. The next real work is
+T-002/T-003, both of which stop at a human approval gate — and T-005/T-006 are human-only.
+*Protocol note:* the handoff commit (`00b2441`) is no longer the last commit of this session, because
+the PR was opened after it and its number had to be recorded. This entry closes the session.

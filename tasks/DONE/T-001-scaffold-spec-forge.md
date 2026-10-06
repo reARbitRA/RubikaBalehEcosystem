@@ -51,4 +51,4 @@ All exit 0. Output pasted in the PR and in `.forge/LEDGER.md`.
 Any product code in `src/`; any spec authoring (T-002/T-003); any GitHub settings change (T-005/T-006).
 
 ## Notes / blockers
-None. Completed in session `2026-10-06-01`.
+None. Completed in session `2026-10-06-01`; delivered as PR #1.
