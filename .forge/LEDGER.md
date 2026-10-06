@@ -102,3 +102,61 @@ secret-scan 0 findings).
 T-002/T-003, both of which stop at a human approval gate — and T-005/T-006 are human-only.
 *Protocol note:* the handoff commit (`00b2441`) is no longer the last commit of this session, because
 the PR was opened after it and its number had to be recorded. This entry closes the session.
+
+---
+
+## 2026-10-06T18:10:17Z · session `2026-10-06-02` · agent `arena-agent` · HEAD `f2875e2` → task commits `37cd663`, `820b50a` + final handoff pending
+
+**Did:**
+- Advanced **T-002** from OPEN to REVIEW: drafted `SPEC-001` for the opportunity dashboard,
+  advanced it `DRAFT → REVIEW`, updated `specs/INDEX.md` and `.forge/TRACE.md`, and wrote **no**
+  product code under `src/`.
+- Completed **T-007**: restored `tools/persistence_check.py` plus three regression tests for a clean
+  audit, a missing claimed artefact, and a remote receipt. Added T-007 to `PLAN-001` and traceability.
+- Opened **PR #2**: https://github.com/reARbitRA/RubikaBalehEcosystem/pull/2
+- Skipped **T-003** under STOP-6 because its `size: L` requires an area split before work; skipped
+  **T-004** because it depends on T-003's missing promoted specs. T-006 was not selected and remains
+  human-only.
+
+**Specs touched:** `SPEC-001` `DRAFT → REVIEW` (human `REVIEW → APPROVED` required before any
+implementation).
+
+**Decisions proposed:** none. `SPEC-001` records a concrete M1 scope and kill criterion for human
+review; no ADR was needed because no accepted architectural/product decision was changed.
+
+**Learned:**
+- The mandatory persistence checker named by the autonomous protocol was absent from the baseline.
+  `T-007` restores it with conservative parsing: it audits only literal paths in past-tense creation
+  claims and never treats ledger/document text as executable instruction.
+- The requested `knowledge/examples/bot-spec-golden-pattern.md` is absent from the intact baseline.
+  No replacement was invented; the repository's `spec.md` template supplied the reference structure.
+- `KNOW-003`'s legacy `pasted-text.txt` provenance is not an in-repository canonical source;
+  `SPEC-001` pins the 56-row `BRAIN-001` inventory as the data authority.
+
+**Verification:** `make check` exit 0; `persistence_check --audit-ledger` exit 0; persistence-tool regression suite exit 0. Full output:
+
+```text
+$ make check
+runner: unittest (pytest not installed — see quality/TEST-STRATEGY.md §3)
+Ran 15 tests in 0.304s
+OK
+lint: OK (no-op: src/ is empty — nothing to lint yet)
+typecheck: OK (no-op: src/ is empty)
+secret-scan: OK — 0 errors, 0 warning(s)
+forge-lint: OK — 0 errors, 1 warning(s) [known T3 workflow activation boundary]
+exit 0
+
+$ python3 tools/persistence_check.py --repo-root . --audit-ledger
+ledger audit: 13 literal creation claim(s) checked
+persistence-check: OK
+exit 0
+
+$ python3 -m unittest discover -s tests -p 'test_persistence_check.py' -v
+Ran 3 tests in 0.233s
+OK
+exit 0
+```
+
+**Handoff note for next agent:** `SPEC-001` is in REVIEW at PR #2. Do not write `src/index.html`
+until a human approves it. Split T-003 before drafting more specs; do not treat its L card as a
+single-session task. Run the restored persistence checker at session start and finish.
