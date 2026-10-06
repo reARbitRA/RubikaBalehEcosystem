@@ -3,7 +3,7 @@ id: FORGE-004
 title: TRACE — Traceability Matrix
 type: forge
 status: ACTIVE
-version: 1.0.0
+version: 1.1.0
 owner: agent
 created: 2026-10-06
 updated: 2026-10-06
@@ -24,7 +24,7 @@ confidence: high
 | Spec | Plan | Task | Branch | Commit | Test | Artefact / code | Status |
 |---|---|---|---|---|---|---|---|
 | — (methodology, no spec) | PLAN-001 | T-001 | `chore/forge-scaffold` | `375edd5` | `tests/test_forge_integrity.py` | whole tree (`AGENTS.md`, `.forge/**`, `tools/forge_lint.py`) | DONE — PR #1 |
-| — (no spec exists yet) | PLAN-001 | T-002 | — | — | — | `knowledge/examples/opportunity-dashboard-v3.md` → `src/` | OPEN |
+| SPEC-001 (REVIEW) | PLAN-001 | T-002 | `arena/8216d2ef-rubikabalehecosystem` | pending task commit | planned `test_ac_1_*` … `test_ac_8_*` | `specs/SPEC-001-opportunity-dashboard.md`; `src/` remains empty | REVIEW — awaiting human `REVIEW → APPROVED` |
 | — (no spec exists yet) | PLAN-001 | T-003 | — | — | — | `brainstorm/BRAIN-001..005` → `specs/` | OPEN |
 | — (decision record) | — | T-004 | — | — | — | `decisions/ADR-0004` (MVP slice choice) | OPEN |
 | — (infra) | — | T-005 | — | — | — | `ops/KEYS.md` (deploy key activation) | BLOCKED |

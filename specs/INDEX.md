@@ -3,7 +3,7 @@ id: QUAL-004
 title: INDEX — All Specs
 type: quality
 status: ACTIVE
-version: 1.0.0
+version: 1.1.0
 owner: agent
 created: 2026-10-06
 updated: 2026-10-06
@@ -26,14 +26,15 @@ confidence: high
 
 | Spec | Title | Area | Status | Version | Plan | Tasks | ACs | Updated |
 |---|---|---|---|---|---|---|---|---|
-| _none yet_ | — | — | — | — | — | — | — | — |
+| [SPEC-001](SPEC-001-opportunity-dashboard.md) | Opportunity dashboard | dashboard | REVIEW | 0.1.0 | PLAN-001 | T-002 | AC-1..AC-8 | 2026-10-06 |
 
-## Why this table is empty
+## Current approval state
 
-There are **no specs yet**, and that is the honest state of the repository on 2026-10-06. The
-repository contains raw thinking (`brainstorm/`), reference output (`knowledge/`) and methodology
-(`.forge/`), but no behavioural contract has been written or approved. Therefore **no product code is
-authorised in `src/`** — see `AGENTS.md` §2, rule 1.
+`SPEC-001` is the first behavioural contract in the repository. It is in **REVIEW**, not
+`APPROVED`: a human must approve it before product code may be written under `src/`. The repository
+still contains only raw thinking (`brainstorm/`), reference output (`knowledge/`), methodology
+(`.forge/`), and a reviewable contract. Therefore **no product code is authorised in `src/`** — see
+`AGENTS.md` §2, rule 1.
 
 ## How a row gets added
 
@@ -50,5 +51,5 @@ authorised in `src/`** — see `AGENTS.md` §2, rule 1.
 
 | Intended spec | Source material | Task |
 |---|---|---|
-| SPEC-001 — opportunity dashboard | `knowledge/examples/opportunity-dashboard-v3.md` + audits | T-002 |
+| SPEC-001 — opportunity dashboard | `BRAIN-001` + `knowledge/examples/opportunity-dashboard-v3.md` + audits | T-002 (REVIEW) |
 | SPEC-002+ — order tracking / receipts / renewals | `brainstorm/BRAIN-001..005` | T-003 |
