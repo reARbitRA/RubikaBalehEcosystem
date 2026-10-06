@@ -1,3 +1,18 @@
+# ---------------------------------------------------------------------------
+# SPEC-FORGE CI workflow.
+#
+# WHERE THIS MUST LIVE: .github/workflows/ci.yml
+# WHY IT IS HERE INSTEAD: the GitHub App used by the agent workspace holds
+# `contents: write` but not `workflows: write`, so a push that creates a file
+# under .github/workflows/ is rejected by GitHub. Everything else in this
+# repository is unaffected.
+#
+# TO ACTIVATE (human, one step):
+#   git mv ops/ci-workflow.yml .github/workflows/ci.yml
+# ...or grant the App the `workflows` permission and let an agent do the same.
+# Tracked by tasks/OPEN/T-006-branch-protection-and-required-checks.md.
+# ---------------------------------------------------------------------------
+
 name: ci
 
 on:

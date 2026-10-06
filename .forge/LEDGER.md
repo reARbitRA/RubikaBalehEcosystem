@@ -30,7 +30,8 @@ markdown documents and no structure.
 - Created `AGENTS.md` (constitution + bootstrap sequence + non-negotiable rules).
 - Created `.forge/{STATE,LEDGER,GLOSSARY,CONVENTIONS,TRACE}.md` and 8 templates in `.forge/templates/`.
 - Created the full folder tree: `vision/ brainstorm/ specs/ decisions/ plans/ tasks/{OPEN,DOING,REVIEW,DONE}/ knowledge/{snippets,examples,apis,research}/ quality/ ops/ src/ tests/ .github/`.
-- Wrote `tools/forge_lint.py` (~330 lines) and wired it into `make forge-lint` + `.github/workflows/ci.yml`.
+- Wrote `tools/forge_lint.py` and wired it into `make forge-lint` + `ops/ci-workflow.yml` (staged for
+  `.github/workflows/ci.yml` — see the blocker below).
 - Wrote a stdlib-`unittest` suite (`tests/`) that keeps `make test` green with zero installs (9 tests).
 - Migrated the 10 legacy root documents into the taxonomy with synthesised frontmatter:
   `Untitled.md` + 4 Persian docs → `brainstorm/BRAIN-001..005`; `Html56v1..v3.md` →
@@ -47,6 +48,11 @@ artifact, no build step) are ACCEPTED — both restate decisions already visible
 material. `ADR-0003` (manual-first MVP) is ACCEPTED with `confidence: medium`.
 
 **Learned:**
+- **The GitHub App token cannot create files under `.github/workflows/`.** The push was rejected with
+  *"refusing to allow a GitHub App to create or update workflow `.github/workflows/ci.yml` without
+  `workflows` permission"*, and the contents API returns 403 for the same path. The workflow is
+  therefore committed at `ops/ci-workflow.yml` with an activation note in its header; moving it is now
+  part of T-006. Recorded in `ops/DEPLOY.md` §3.1.
 - `pytest` is **not** installed in this workspace. The suite therefore runs on stdlib `unittest`
   and is written to be runner-agnostic. Recorded in `quality/TEST-STRATEGY.md`.
 - Git identity in this sandbox is `reARbitRA <129707861+reARbitRA@users.noreply.github.com>`, so

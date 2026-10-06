@@ -28,6 +28,9 @@ Make `main` safe to hand a write credential to.
 No repo files. GitHub UI: *Settings → Branches → Add rule for `main`*.
 
 ## Steps
+0. **Activate the CI workflow**: `git mv ops/ci-workflow.yml .github/workflows/ci.yml` — the agent's
+   GitHub App lacks the `workflows` permission, so a human must do this one (or grant the App the
+   permission). Context: `ops/DEPLOY.md` §3.1.
 1. Require a pull request before merging.
 2. Require status checks: `test`, `lint`, `typecheck`, `secret-scan`, `forge-lint`.
 3. Require linear history.

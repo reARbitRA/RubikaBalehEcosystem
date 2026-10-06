@@ -42,7 +42,7 @@ python3 -m http.server 8000        # then open http://127.0.0.1:8000/src/index.h
 ## 3. Pipeline
 
 ```
-push to feat/* ──▶ .github/workflows/ci.yml
+push to feat/* ──▶ .github/workflows/ci.yml   (currently staged at ops/ci-workflow.yml — see §3.1)
                       ├─ test          (python3 -m unittest)
                       ├─ lint          (no-op while src/ is empty)
                       ├─ typecheck     (no-op while src/ is empty)
@@ -59,6 +59,22 @@ push to feat/* ──▶ .github/workflows/ci.yml
 
 Job names in the workflow are exactly `test`, `lint`, `typecheck`, `secret-scan`, `forge-lint` so they
 can be listed as required status checks verbatim.
+
+### 3.1 Where the workflow file lives right now
+
+The workflow is committed at **`ops/ci-workflow.yml`** rather than
+`.github/workflows/ci.yml`, because the GitHub App the agent workspace authenticates as does not hold
+the `workflows` permission and GitHub rejects any push that creates a file under
+`.github/workflows/`.
+
+**One human step finishes it:**
+
+```bash
+git mv ops/ci-workflow.yml .github/workflows/ci.yml
+```
+
+(or grant the App `workflows: write`, then an agent can do the same). Until that happens, run the
+identical gate locally with `make check` — CI is a convenience, the gate is not optional.
 
 ## 4. Branch protection (required settings)
 

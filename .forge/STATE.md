@@ -51,5 +51,6 @@ remains is human activation of the write credential (see `ops/KEYS.md`).
 ## Env/infra changes this session
 - Added `ops/ENV.md` (currently zero runtime env vars — the dashboard is a static file).
 - Added `ops/KEYS.md` with one ACTIVE-pending-activation ed25519 key fingerprint.
-- Added `.github/workflows/ci.yml` running test / lint / typecheck / secret-scan / forge-lint.
+- Added `ops/ci-workflow.yml` (the CI workflow, staged one `git mv` away from
+  `.github/workflows/ci.yml` — see ops/DEPLOY.md §3.1).
 - Added `.gitignore` covering key material (`*.pem`, `id_*`, `*_ed25519*`, `.forge-keys/`, `.env`).

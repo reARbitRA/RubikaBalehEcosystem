@@ -28,7 +28,7 @@ confidence: high
 | — (no spec exists yet) | PLAN-001 | T-003 | — | — | — | `brainstorm/BRAIN-001..005` → `specs/` | OPEN |
 | — (decision record) | — | T-004 | — | — | — | `decisions/ADR-0004` (MVP slice choice) | OPEN |
 | — (infra) | — | T-005 | — | — | — | `ops/KEYS.md` (deploy key activation) | BLOCKED |
-| — (infra) | — | T-006 | — | — | — | `.github/workflows/ci.yml` + branch protection | OPEN |
+| — (infra) | — | T-006 | — | — | — | `ops/ci-workflow.yml` → `.github/workflows/ci.yml` + branch protection | OPEN |
 
 ## Conventions for this file
 
